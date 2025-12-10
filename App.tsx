@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Briefcase, Code, Globe, Database, Server, ChevronDown, Mail, Github, Award, Zap, Terminal } from 'lucide-react';
 
 // --- Types ---
@@ -152,14 +152,11 @@ const Card = ({ children, className = "" }: { children: React.ReactNode; classNa
 // --- Main App ---
 
 export default function App() {
-  const [activeSection, setActiveSection] = useState('home');
-
   // Smooth scroll handler
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setActiveSection(id);
     }
   };
 
@@ -270,7 +267,7 @@ export default function App() {
           <SectionHeader title="Experience" subtitle="CAREER PATH" />
           
           <div className="relative border-l border-white/10 ml-3 md:ml-6 space-y-12">
-            {experiences.map((exp, idx) => (
+            {experiences.map((exp) => (
               <div key={exp.id} className="relative pl-8 md:pl-12 group">
                 {/* Timeline Dot */}
                 <div className="absolute -left-[5px] top-2 w-[11px] h-[11px] rounded-full bg-gray-600 group-hover:bg-blue-500 transition-colors duration-300 ring-4 ring-[#050505]"></div>
