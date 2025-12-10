@@ -4,8 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // 注意：如果您部署到 https://<USERNAME>.github.io/<REPO>/
-  // 请将下面的 base 修改为 '/<REPO>/' (例如 '/my-portfolio/')
-  // 如果是部署到 https://<USERNAME>.github.io/ (个人主页仓库)，则保持 '/'
+  // 使用相对路径 './' 确保资源在 GitHub Pages 的任何子路径下都能正确加载
   base: './', 
 })
