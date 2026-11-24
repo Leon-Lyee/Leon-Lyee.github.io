@@ -19,31 +19,45 @@ interface Project {
   description: string;
 }
 
-// --- Data (Extracted from OCR) ---
+// --- Data（職務経歴書 2026年12月版と揃える） ---
 const experiences: Experience[] = [
+  {
+    id: 'exp0',
+    company: '離職期間の取り組み',
+    role: '生成AIの業務適用（個人での検証）',
+    period: '2024.08 - 現在',
+    description: '両親のサポートと並行して基本情報技術者試験に合格（2024.10）。2025年4月から生成AIの業務適用を学び、統制を組み込んだ業務ツールを自作・運用。',
+    achievements: [
+      '領収書の自動読取・記帳ツール：APIコストを実測してモデルを選定、個人情報は自動マスキング',
+      '専門用語を「例え話＋操作できる図解」に変換するツール（日中英3言語）',
+      'AIエージェントの運用ルール設計：人の役割、AIが確認なしで実行できる範囲、外部送信前のチェック',
+      'ローカルLLM＋RAGを検証し、精度不足と判断して業務手順を読み込ませる方式（Skill）へ切り替え'
+    ]
+  },
   {
     id: 'exp1',
     company: '東洋アルミニウム株式会社',
-    role: 'ITマネジメント / 社内SE',
+    role: '情報システム部門 / 社内SE',
     period: '2018.04 - 2024.07',
-    description: 'グローバルIT統制、社内DX推進、インフラ管理を担当。創業100年近い企業の変革期において、経営層と現場の橋渡し役として従事。',
+    description: 'ITGC（IT全般統制）の監査対応、海外拠点のIT立ち上げ、SaaS・業務システムの導入を担当。業務部門と運用方法を一緒に検討し、現場に定着するまで伴走。',
     achievements: [
-      '上海オフィス移転プロジェクト：現地法人設立に伴うネットワーク・サーバー構築を主導',
-      'Notes DB移行：半年間で50DBの移行を達成、納期遵守と現場の定着化を実現',
-      '社内DX：PowerAppsを用いた障害報告アプリ開発（150ユーザー利用）',
-      'インフラ・セキュリティ：Citrix VDI環境運用、全社ヘルプデスク管理'
+      'ITGC監査対応、海外子会社のIT監査（通訳・監査補助）',
+      '上海オフィス移転：日中の関係6社を両言語で調整し、現地のIT実務を統括',
+      'Notes DB移行：プロジェクトリーダーとして2案を経営層に提示し、約50DBを棚卸し・約45DBを移行、期限内に完了',
+      '名刺管理（Sansan）のグループ導入：IT担当責任者としてセキュリティ要件を設計',
+      '上申書・ワークフロー約40件の電子化、SharePointによる社内ポータル構築',
+      'インフラ：端末1,500台超（Citrix VDI 約1,000台を含む）の運用管理'
     ]
   },
   {
     id: 'exp2',
     company: '株式会社ワークスアプリケーションズ',
-    role: 'パッケージ開発エンジニア',
+    role: '開発職（EコマースERPパッケージ）',
     period: '2015.04 - 2018.02',
-    description: 'EコマースERPパッケージ（ECERP）の開発および保守を担当。',
+    description: 'EコマースERPパッケージの保守、要件定義・設計、販売施策の提案を担当。',
     achievements: [
-      'CACWEB販売特定商品売上 200%UPに貢献',
-      '要件定義から設計、保守まで幅広いフェーズを担当',
-      '6人チームの開発リード経験'
+      '化粧品通販企業向けに「一部の商品だけ次回スキップ」機能を企画・提案し、対象商品の売上が2倍以上に',
+      '開発チーム6名のマネジメント（6ヶ月）'
     ]
   },
   {
@@ -58,33 +72,47 @@ const experiences: Experience[] = [
 
 const projects: Project[] = [
   {
-    id: 'p1',
-    title: 'グローバルIT統制 & 上海オフィス立ち上げ',
-    role: 'PM / インフラ担当',
-    tech: ['Network Design', 'Server Construction', 'IT Governance'],
-    description: '中国現地法人設立に伴い、単独でネットワーク・ファイルサーバー構築を主導。現地ベンダー（KDDI/NEC等）および引っ越し業者計6社をコントロールし、IT統制基盤を確立。'
+    id: 'p2',
+    title: 'Notes DB 移行',
+    role: 'プロジェクトリーダー',
+    tech: ['Migration', 'Planning', 'Change Management'],
+    description: 'グループ再編に伴う期限付き案件。当初6ヶ月の計画を作業量と体制から検証し、「増員で6ヶ月」「最短9ヶ月」の2案を経営層に提示、9ヶ月案が採用。約50DBを棚卸しして約45DBを移行し、残りは廃止・統合して期限内に完了。'
   },
   {
-    id: 'p2',
-    title: 'Notes DB マイグレーション',
-    role: 'プロジェクトリーダー',
-    tech: ['Migration', 'Data Analysis', 'Change Management'],
-    description: '会社合併の必須条件として、半年間で50DBの移行プロジェクトを完遂。「技術的難易度」と「現場の抵抗」という二重の課題に対し、段階的導入計画と徹底したリソース管理で解決。'
+    id: 'p1',
+    title: '上海オフィス移転 & グローバルIT統制',
+    role: 'IT実務統括',
+    tech: ['Network', 'File Server', 'IT Governance'],
+    description: '現地ネットワーク・ファイルサーバー構築、国際TV会議網の移設を統括。NEC・KDDI・現地法人・引越業者等の6社を日中両言語で調整し、本社の統制ルールを現地に展開。'
   },
   {
     id: 'p3',
-    title: '社内DX / 障害報告プラットフォーム',
+    title: '障害報告アプリ（自主開発）',
     role: '企画・開発',
     tech: ['PowerApps', 'Power Automate', 'SharePoint'],
-    description: '「みんなで障害報告」アプリをローコード開発。約170名までユーザーが増加し、社内の障害共有フローを効率化。'
+    description: '障害情報を共有するアプリをローコードで開発。利用者約150名に定着し、退職時点で延べ約170名が利用。退職後も継続運用。'
+  },
+  {
+    id: 'p4',
+    title: '領収書の自動読取・記帳ツール',
+    role: '個人開発（2026〜）',
+    tech: ['Claude API', 'Python', 'Data Masking'],
+    description: '写真・PDFから経費台帳（Excel）へ自動記帳。1枚あたりのAPIコスト（約3〜6円）を実測して精度とコストでモデルを選び、氏名・住所等は自動マスキングしてからAIへ送信。'
+  },
+  {
+    id: 'p5',
+    title: '専門用語の例え話・図解ツール',
+    role: '個人開発（2026〜）',
+    tech: ['Claude API', 'FastAPI', 'Sandbox'],
+    description: 'IT・金融・法務などの専門用語を、身近な例え話と操作できる図解に変換（日中英3言語）。部門間の認識のずれを埋める用途を想定し、AIが生成したプログラムは通信を禁止した隔離環境で実行。'
   }
 ];
 
 const skills = [
-  { category: 'Development', items: ['Java', 'SQL', 'HTML/CSS', 'PowerApps', 'Python (AI Learning)'] },
-  { category: 'Infrastructure', items: ['Windows Server', 'Network', 'Citrix VDI', 'Azure/O365', 'IT Security'] },
-  { category: 'Management', items: ['Project Management', 'IT Governance', 'Vendor Control', 'Bridge SE (JP/CN)'] },
-  { category: 'Languages', items: ['Japanese (N1/Fluent)', 'Chinese (Native)', 'English (Reading)'] }
+  { category: 'Development', items: ['Claude API / Claude Code', 'Python', 'Java', 'SQL', 'PowerApps'] },
+  { category: 'Infrastructure', items: ['Active Directory', 'Citrix VDI', 'Network', 'Microsoft 365', 'SharePoint'] },
+  { category: 'Management', items: ['IT Governance (ITGC / J-SOX)', 'Security Policy', 'Vendor Control', 'Project Leadership'] },
+  { category: 'Languages', items: ['Japanese (JLPT N1)', 'Chinese (Native)', 'English (Reading)'] }
 ];
 
 // --- Components ---
@@ -197,12 +225,12 @@ export default function App() {
             Li Hanbing
           </h1>
           <div className="text-2xl md:text-4xl font-light text-gray-300 mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            I am a <Typewriter words={['Bridge SE.', 'Project Manager.', 'DX Promoter.', 'Solutions Architect.']} />
+            I am an <Typewriter words={['In-house SE.', 'IT Governance Specialist.', 'AI Practitioner.']} />
           </div>
           
           <div className="max-w-2xl text-gray-400 leading-relaxed animate-fade-in-up text-xl" style={{ animationDelay: '0.3s' }}>
-            グローバルな視点と技術力で、ビジネスの課題を解決するITプロフェッショナル。<br className="hidden md:block"/>
-            異文化間の架け橋となり、複雑なプロジェクトを成功に導きます。
+            IT統制の実務と生成AIの活用で、「便利さ」と「統制」を両立させる社内SE。<br className="hidden md:block"/>
+            日本語・中国語で、現場と経営、日本と海外をつなぎます。
           </div>
 
           <div className="mt-16 animate-bounce cursor-pointer" onClick={() => scrollTo('about')}>
@@ -219,17 +247,17 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-gray-300 leading-loose text-lg">
               <p>
-                1986年生まれ。中国出身、日本在住のエンジニア兼プロジェクトマネージャーです。
-                経済学部出身という異色のバックグラウンドを持ちながら、ITキャリアをスタートさせ、
-                「未経験分野」を「新たな強み」に変える適応力を培ってきました。
+                1986年生まれ。中国出身、日本在住の社内SEです。
+                経済学の修士課程を修了後にITキャリアをスタートし、
+                業務側の視点から、技術を現場の言葉に置き換えて伝えることを得意としています。
               </p>
               <p>
-                日系大手メーカーでのグローバルIT統制や、ERPパッケージ開発の経験を通じて、
-                技術的な課題解決だけでなく、組織間の政治的・文化的課題の解決にも強みを持っています。
+                素材メーカーの情報システム部門で約6年、ITGC対応、海外拠点のIT立ち上げ、
+                SaaS・業務システムの導入を担当してきました。
               </p>
               <p>
-                直近ではAI技術（LLM）の研究や、金融トレーディングアルゴリズムの学習など、
-                常に新しい技術領域への挑戦を続けています。
+                2025年からは生成AIの業務適用に取り組み、コスト計測や個人情報保護を
+                組み込んだ業務ツールを自作・運用しています。
               </p>
               
               <div className="pt-6 grid grid-cols-2 gap-4">
@@ -238,8 +266,8 @@ export default function App() {
                     <span className="text-base font-mono">基本情報技術者</span>
                  </div>
                  <div className="flex items-center gap-3">
-                    <Zap className="text-yellow-500 w-6 h-6" />
-                    <span className="text-base font-mono">二等無人機操縦士</span>
+                    <Globe className="text-yellow-500 w-6 h-6" />
+                    <span className="text-base font-mono">日本語能力試験 N1</span>
                  </div>
               </div>
             </div>
@@ -381,7 +409,7 @@ export default function App() {
               <Mail className="w-6 h-6 group-hover:text-blue-400" />
               <span>Email Me</span>
             </a>
-            <a href="#" className="group flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-lg">
+            <a href="https://github.com/Leon-Lyee" className="group flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-lg">
               <Github className="w-6 h-6 group-hover:text-purple-400" />
               <span>GitHub</span>
             </a>
