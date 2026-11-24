@@ -400,15 +400,10 @@ export default function App() {
             Let's work together.
           </h2>
           <p className="text-gray-400 mb-12 text-lg">
-            新しいプロジェクト、技術的な相談、または単なる挨拶でも構いません。<br />
-            お気軽にご連絡ください。
+            ご連絡は、ご利用中の転職サービス経由でお願いいたします。
           </p>
           
           <div className="flex justify-center gap-8 mb-16">
-            <a href="mailto:wolfvslion100@yahoo.co.jp" className="group flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-lg">
-              <Mail className="w-6 h-6 group-hover:text-blue-400" />
-              <span>Email Me</span>
-            </a>
             <a href="https://github.com/Leon-Lyee" className="group flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-lg">
               <Github className="w-6 h-6 group-hover:text-purple-400" />
               <span>GitHub</span>
